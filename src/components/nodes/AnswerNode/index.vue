@@ -3,12 +3,12 @@ import { Position, Handle, useVueFlow } from "@vue-flow/core";
 import { ref } from "vue";
 import { ElForm, ElFormItem, ElSelect, ElOption } from "element-plus";
 
-const props = defineProps(["id", "label", "selected"]);
+const props = defineProps(["id", "label", "selected", "data"]);
 
 const { removeNodes } = useVueFlow();
 
 const answerArea2Data = ref({
-	model: "model1",
+	model: "",
 });
 const rules = ref({
 	model: [{ required: true, message: "请选择AI模型", trigger: "change" }],
@@ -56,6 +56,11 @@ const handleRemove = (props) => {
 						v-model="answerArea2Data.model"
 						placeholder="请选择AI模型"
 						size="small"
+						@change="
+							(val) => {
+								data.model = val;
+							}
+						"
 					>
 						<el-option label="模型1" value="model1" />
 						<el-option label="模型2" value="model2" />
