@@ -188,7 +188,6 @@ onMounted(() => {
 		<!-- 流程图 -->
 		<div style="width: 100%; height: 100%">
 			<VueFlow
-				class="basicflow"
 				v-model:nodes="nodes"
 				v-model:edges="edges"
 				:node-types="nodeTypes"
