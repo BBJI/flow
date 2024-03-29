@@ -172,7 +172,7 @@ onMounted(() => {
 			direction="ltr"
 			:close-on-click-modal="false"
 			:modal="false"
-			size="300"
+			size="100%"
 			modal-class="drawer-modal"
 		>
 			<div class="drawer-modal-menu">
@@ -245,6 +245,7 @@ onMounted(() => {
 		z-index: 9999;
 	}
 	.drawer-modal {
+		width: 300px;
 		&-menu {
 			display: flex;
 			flex-direction: column;
